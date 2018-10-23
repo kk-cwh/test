@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>test</title>
+  <script src="http://g.tbcdn.cn/mtb/lib-flexible/0.3.4/??flexible_css.js,flexible.js"></script> 
+  <link href="https://cdn.bootcss.com/font-awesome/4.7.0/css/font-awesome.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.min.js"></script>
+
+  <script type="text/javascript">
+window.onload=function(){
+
+var canvas = document.createElement('canvas');
+var gl = canvas.getContext('webgl');  // 等同于 canvas.getContext('experimental-webgl');
+
+var debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+
+console.log( gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) );
+// GPU 制造商，e.g., Intel Inc.
+
+console.log( gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) );
+// GPU 型号，e.g., Intel Iris OpenGL Engine
+}
+
+  
+  </script>
+</head>
+
+<body>
+ <h1>hello world</h1>
+
+</body>
+
+
+</html>
