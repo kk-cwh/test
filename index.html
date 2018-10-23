@@ -13,17 +13,18 @@
   <script type="text/javascript">
 window.onload=function(){
 
-var canvas = document.createElement('canvas');
-var gl = canvas.getContext('webgl');  // 等同于 canvas.getContext('experimental-webgl');
+var canvas = document.createElement("canvas");
+var gl = canvas.getContext("experimental-webgl");
+var debugInfo = gl.getExtension("WEBGL_debug_renderer_info");
 
-var debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
-
-console.log( gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL) );
-// GPU 制造商，e.g., Intel Inc.
-
-console.log( gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL) );
-// GPU 型号，e.g., Intel Iris OpenGL Engine
-}
+var gys = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);   // 显卡供应商
+var xk = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL); // 显卡渲染器
+alert('显卡供应商:'+gys)
+alert('显卡渲染器:'+xk)
+alert('屏幕高度:'+window.screen.width)      // 屏幕宽度
+alert('屏幕高度:'+window.screen.height)     // 屏幕高度
+alert('颜色深度:'+window.screen.colorDepth) // 颜色深度
+alert('设备像素比:'+window.devicePixelRatio)
 
   
   </script>
